@@ -1,0 +1,30 @@
+.nav-links {
+  display: none;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint-up(small) {
+    display: flex;
+  }
+  > li {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+    > a {
+      font-size: $font-md;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: $spacing;
+      color: $grey;
+      text-transform: capitalize;
+      transition: $transition;
+
+      &:hover {
+        color: $primary-color;
+        box-shadow: 0 2px $primary-color;
+      }
+    }
+  }
+}

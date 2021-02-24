@@ -1,0 +1,48 @@
+.hero {
+  padding-top: 5rem;
+  height: 100vh;
+
+  .hero-grid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+
+    @include breakpoint-up(small) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .underline {
+      width: 5rem;
+      height: 0.25rem;
+      background-color: $primary-color;
+    }
+
+    .hero-text {
+      grid-row: 1/1;
+      grid-column: 1 / span 8;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+    .hero-image {
+      display: none;
+
+      @include breakpoint-up(small) {
+        display: block;
+        grid-row: 1/1;
+        grid-column: 6/-1;
+        background-image: url('../images/hero.svg');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 17.5rem;
+        transform: translateX(65px);
+        height: 100%;
+      }
+    }
+  }
+}

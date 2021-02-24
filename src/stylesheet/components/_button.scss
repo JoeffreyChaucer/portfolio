@@ -1,0 +1,21 @@
+.btn {
+  text-transform: uppercase;
+  background-color: $primary-color;
+  color: $lighterblue;
+  padding: 0.375rem 0.75rem;
+  letter-spacing: $spacing;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  transition: $transition;
+  font-size: $font-sm;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: $raduis;
+
+  &:hover {
+    color: $grey;
+    background-color: $primary-color;
+  }
+}
