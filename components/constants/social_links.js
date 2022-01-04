@@ -1,8 +1,8 @@
-import React from 'react';
+import Link from 'next/link';
 import {
-  FaFacebookSquare,
+  FaStackOverflow,
   FaLinkedin,
-  FaDribbbleSquare,
+  FaGithub,
   FaBehanceSquare,
   FaTwitterSquare,
 } from 'react-icons/fa';
@@ -10,23 +10,23 @@ import {
 const data = [
   {
     id: 1,
-    icon: <FaFacebookSquare className='social-icon'></FaFacebookSquare>,
-    url: 'https://www.twitter.com',
+    icon: <FaStackOverflow className='social-icon'></FaStackOverflow>,
+    url: 'https://meta.stackexchange.com/users/1122110/joeffrey-chaucer/',
   },
   {
     id: 2,
     icon: <FaLinkedin className='social-icon'></FaLinkedin>,
-    url: 'https://www.twitter.com',
+    url: 'https://www.linkedin.com/in/joeffreychaucer/W',
   },
   {
     id: 3,
-    icon: <FaDribbbleSquare className='social-icon'></FaDribbbleSquare>,
-    url: 'https://www.twitter.com',
+    icon: <FaGithub className='social-icon'></FaGithub>,
+    url: 'https://github.com/JoeffreyChaucer/',
   },
   {
     id: 4,
     icon: <FaBehanceSquare className='social-icon'></FaBehanceSquare>,
-    url: 'https://www.twitter.com',
+    url: 'https://www.behance.net/joeffreychaucer',
   },
   {
     id: 5,
@@ -40,9 +40,9 @@ const SocialLinks = () => {
     <div className='social-links'>
       {data.map((link) => {
         return (
-          <a href={link.url} key={link.id} className='social-link'>
-            {link.icon}
-          </a>
+          <Link href={link.url} key={link.id}>
+            <a className='social-link'>{link.icon}</a>
+          </Link>
         );
       })}
     </div>

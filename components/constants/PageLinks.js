@@ -19,18 +19,24 @@ const data = [
   {
     id: 5,
     text: 'contact',
-    url: '/contact/',
+    url: 'contact',
   },
 ];
 
-const links = ({ styleClass }) => {
+const PageLinks = ({ styleClass }) => {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ''}`}>
       {data &&
         data.map((link) => {
           return (
             <li key={link.id}>
-              <Links href={link.url}>{link.text}</Links>
+              {link.id === 5 ? (
+                <Links href='/#contact'>contact</Links>
+              ) : (
+                <Links href={link.url}>
+                  <a>{link.text}</a>
+                </Links>
+              )}
             </li>
           );
         })}
@@ -38,4 +44,4 @@ const links = ({ styleClass }) => {
   );
 };
 
-export default links;
+export default PageLinks;

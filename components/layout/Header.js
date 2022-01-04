@@ -1,18 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { FaAlignRight } from 'react-icons/fa';
 import Link from 'next/link';
-import PageLinks from '../constants/links';
-const Header = () => {
+import PageLinks from '../constants/PageLinks';
+
+import Image from 'next/image';
+const Header = ({ toggleSidebar }) => {
   return (
     <nav className='navbar'>
       <div className='nav-center'>
         <div className='nav-header'>
           <Link href='/'>
             <a>
-              <img src='/logo.svg' alt='logo' />
+              <Image src='/logo.svg' alt='logo' height={43} width={157} />
             </a>
           </Link>
-          <button type='button' className='toggle-btn'>
+          <button type='button' className='toggle-btn' onClick={toggleSidebar}>
             <FaAlignRight />
           </button>
         </div>

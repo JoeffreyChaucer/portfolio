@@ -721,7 +721,7 @@ Projects
 }
 .project-icon {
   color: var(--clr-primary-5);
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   margin-right: 0.5rem;
   transition: var(--transition);
 }
@@ -750,6 +750,7 @@ Projects
     height: 30rem;
     border-radius: var(--radius);
     box-shadow: var(--dark-shadow);
+    position: relative;
   }
   .project-info {
     border-radius: var(--radius);
@@ -809,8 +810,7 @@ Pages
 .project-template-page,
 .projects-page,
 .error-page,
-.about-page,
-.contact-page {
+.about-page {
   background: var(--clr-grey-10);
   min-height: calc(100vh - 5rem - 9rem);
 }
@@ -908,10 +908,34 @@ About Page
 }
 /*
 ===============
-Contact Page
+Contact 
 ===============
 */
-.contact-page {
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.contact {
   display: grid;
   place-items: center;
   padding: 5rem 0;
@@ -960,4 +984,27 @@ Contact Page
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

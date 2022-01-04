@@ -3,21 +3,19 @@ import { useState } from 'react';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import Link from 'next/link';
 
-const Jobs = ({ data: job }) => {
+const Jobs = ({ jobs }) => {
   const [value, setValue] = useState(0);
 
-  const { data: jobs } = job;
+  const { data: job } = jobs;
 
-  const { company, position, date, desc } = jobs[value].attributes;
-
-  console.log(company, position, date, desc);
+  const { company, position, date, desc } = job[value].attributes;
 
   return (
     <section className='section jobs'>
       <Title title='experience' />
       <div className='jobs-center'>
         <div className='btn-container'>
-          {jobs.map((item, index) => (
+          {job.map((item, index) => (
             <button
               key={item.id}
               onClick={() => setValue(index)}
