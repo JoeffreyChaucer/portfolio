@@ -28,11 +28,6 @@ const data = [
     icon: <FaBehanceSquare className='social-icon'></FaBehanceSquare>,
     url: 'https://www.behance.net/joeffreychaucer',
   },
-  {
-    id: 5,
-    icon: <FaTwitterSquare className='social-icon'></FaTwitterSquare>,
-    url: 'https://www.twitter.com',
-  },
 ];
 
 const SocialLinks = () => {
