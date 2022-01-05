@@ -6,7 +6,7 @@ export default function ErrorPage() {
     <Layout title='404 Page Not Found'>
       <main className='error-page'>
         <div className='error-container'>
-          <h1>Oops it's a dead end</h1>
+          <h1>Oops its a dead end</h1>
           <Link href='/'>
             <a className='btn'> back home</a>
           </Link>

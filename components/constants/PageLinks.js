@@ -19,7 +19,7 @@ const data = [
   {
     id: 5,
     text: 'contact',
-    url: 'contact',
+    url: '/#contact',
   },
 ];
 
@@ -30,13 +30,9 @@ const PageLinks = ({ styleClass }) => {
         data.map((link) => {
           return (
             <li key={link.id}>
-              {link.id === 5 ? (
-                <Links href='/#contact'>contact</Links>
-              ) : (
-                <Links href={link.url}>
-                  <a>{link.text}</a>
-                </Links>
-              )}
+              <Links href={link.url}>
+                <a>{link.text}</a>
+              </Links>
             </li>
           );
         })}

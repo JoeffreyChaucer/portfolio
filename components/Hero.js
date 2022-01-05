@@ -7,7 +7,7 @@ const Hero = () => {
         <article className='hero-info'>
           <div>
             <div className='underline'></div>
-            <h1>I'm Joe</h1>
+            <h1>Im Joe</h1>
             <h4>web and mobile dev</h4>
             <Link to='contact' smooth={true} duration={1000}>
               <a className='btn'>Contact Me</a>
