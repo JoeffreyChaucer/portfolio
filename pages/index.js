@@ -16,7 +16,12 @@ export default function Home({ jobs, projects }) {
       <Hero />
       <Services />
       <Jobs jobs={jobs} />
-      <Projects projects={projects.data} title='Featured projects' showLink />
+      <Projects
+        projects={projects.data}
+        title='Featured projects'
+        showLink
+        featured
+      />
       <Contact />
       <ToastContainer />
     </Layout>
@@ -26,7 +31,7 @@ export default function Home({ jobs, projects }) {
 export async function getStaticProps() {
   const [jobsRes, projectsRes] = await Promise.all([
     fetch(`${API_URL}/api/jobs?populate=*&sort=id:desc`),
-    fetch(`${API_URL}/api/projects?populate=*&featured=true&sort=id:desc`),
+    fetch(`${API_URL}/api/projects?populate=*&sort=id:desc`),
   ]);
   const [jobs, projects] = await Promise.all([
     jobsRes.json(),
